@@ -29,8 +29,8 @@ class Turbogit < Formula
 
   def install
     bin.install "bin/tug"
-    mkdir_p ENV['HOME']/".config/tug"
-    mv "config/tug.toml", ENV['HOME']/".config/tug/tug.toml"
+    mkdir_p File.join(ENV['HOME'], ".config/tug")
+    mv "config/tug.toml", File.join(ENV['HOME'], ".config/tug/tug.toml")
     (bash_completion/"tug.sh").write `#{bin}/tug completion bash`
     (zsh_completion/"_tug").write `#{bin}/tug completion zsh`
     (fish_completion/"tug.fish").write `#{bin}/tug completion fish`
