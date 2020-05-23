@@ -29,8 +29,7 @@ class Turbogit < Formula
 
   def install
     bin.install "bin/tug"
-    (etc/"tug").mkpath
-    etc.install "config/tug.toml" => "tug/tug.toml"
+    etc.install "config/tug.toml"
     (bash_completion/"tug.sh").write `#{bin}/tug completion bash`
     (zsh_completion/"_tug").write `#{bin}/tug completion zsh`
     (fish_completion/"tug.fish").write `#{bin}/tug completion fish`
