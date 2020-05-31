@@ -2,29 +2,29 @@
 class Turbogit < Formula
   desc "Cli tool built to help you deal with your day-to-day git work"
   homepage "https://github.com/b4nst/turbogit"
-  version "1.0.0"
-
-  head do
-    url "https://github.com/b4nst/turbogit.git"
-    depends_on "go"
-  end
-
+  version "1.1.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/b4nst/turbogit/releases/download/v1.0.0/turbogit_1.0.0_macOS_amd64.tar.gz"
-    sha256 "06254581f1c21d34cf2a662ac2231d3369e98faf678553f220f2494e6d03dfc7"
+    url "https://github.com/b4nst/turbogit/releases/download/v1.1.0/turbogit_1.1.0_macOS_amd64.tar.gz"
+    sha256 "985793f8b49a79b252d753e89c071bf9d272ac6f6eeb996e5f1ae2085d2a8329"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/b4nst/turbogit/releases/download/v1.0.0/turbogit_1.0.0_linux_amd64.tar.gz"
-      sha256 "78fd0512142f174e2595a152ea70ceaf1dc62232713d878267a93b81d3d4fc4c"
+      url "https://github.com/b4nst/turbogit/releases/download/v1.1.0/turbogit_1.1.0_linux_amd64.tar.gz"
+      sha256 "2c360eb341d75854d5433b8db35c0ebf19b8ce35fb1371e3653dfd38d0100ae4"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/b4nst/turbogit/releases/download/v1.0.0/turbogit_1.0.0_linux_arm64.tar.gz"
-        sha256 "828f1c2806e1ed624d76091ba050eb8455a9fcb210282daa065d2bfc9e7fd307"
+        url "https://github.com/b4nst/turbogit/releases/download/v1.1.0/turbogit_1.1.0_linux_arm64.tar.gz"
+        sha256 "bd547c36c5d0510906bb273747bd6389dffd16358ad7aa733419eef95bf06b6a"
+      else
       end
     end
+  end
+  
+  head do
+    url "https://github.com/b4nst/turbogit.git"
+    depends_on "go"
   end
 
   def install
