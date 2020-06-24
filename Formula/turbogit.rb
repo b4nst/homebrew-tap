@@ -7,16 +7,16 @@ class Turbogit < Formula
 
   if OS.mac?
     url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_macOS_amd64.tar.gz"
-    sha256 "985793f8b49a79b252d753e89c071bf9d272ac6f6eeb996e5f1ae2085d2a8329"
+    sha256 "a5aa944b2a7ecd1f26a2ce3913eaa9abd6fafc6fb15ed9472e9c3881c0491d15"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_linux_amd64.tar.gz"
-      sha256 "2c360eb341d75854d5433b8db35c0ebf19b8ce35fb1371e3653dfd38d0100ae4"
+      sha256 "a48bb0cf7c6962991671183f9b1aec4219cc97504ee7cd62da2251436975041a"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
         url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_linux_arm64.tar.gz"
-        sha256 "bd547c36c5d0510906bb273747bd6389dffd16358ad7aa733419eef95bf06b6a"
+        sha256 "a9d8a01fa31b0fc1c383233b88dfc6ddd6ce6080a1041b2b041656863f133b08"
       else
       end
     end
