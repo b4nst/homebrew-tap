@@ -6,17 +6,17 @@ class Turbogit < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/b4nst/rename/releases/download/v0.1.0/turbogit_0.1.0_macOS_amd64.tar.gz"
-    sha256 "0fa035c8b68df5b8a120686e23906826870509f700e702af48c64f521d6a1022"
+    url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_macOS_amd64.tar.gz"
+    sha256 "985793f8b49a79b252d753e89c071bf9d272ac6f6eeb996e5f1ae2085d2a8329"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/b4nst/rename/releases/download/v0.1.0/turbogit_0.1.0_linux_amd64.tar.gz"
-      sha256 "34732fa336cb87f8673c6413bd5a9bf0c71cf71f17612d70ecad2d373511ddce"
+      url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_linux_amd64.tar.gz"
+      sha256 "2c360eb341d75854d5433b8db35c0ebf19b8ce35fb1371e3653dfd38d0100ae4"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/b4nst/rename/releases/download/v0.1.0/turbogit_0.1.0_linux_arm64.tar.gz"
-        sha256 "1edc758fa76125c5b4fccc40d7486f614f3cfb8ef62e5db4f927449ad9205e47"
+        url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_linux_arm64.tar.gz"
+        sha256 "bd547c36c5d0510906bb273747bd6389dffd16358ad7aa733419eef95bf06b6a"
       else
       end
     end
