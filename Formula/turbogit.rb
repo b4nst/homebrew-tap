@@ -7,7 +7,7 @@ class Turbogit < Formula
 
   if OS.mac?
     url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_macOS_amd64.tar.gz"
-    sha256 "985793f8b49a79b252d753e89c071bf9d272ac6f6eeb996e5f1ae2085d2a8329"
+    sha256 "a5aa944b2a7ecd1f26a2ce3913eaa9abd6fafc6fb15ed9472e9c3881c0491d15"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_linux_amd64.tar.gz"
