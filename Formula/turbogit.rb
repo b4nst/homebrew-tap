@@ -2,24 +2,20 @@
 class Turbogit < Formula
   desc "Cli tool built to help you deal with your day-to-day git work"
   homepage "https://github.com/b4nst/turbogit"
-  version "1.1.1"
+  version "1.2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_macOS_amd64.tar.gz"
-    sha256 "a5aa944b2a7ecd1f26a2ce3913eaa9abd6fafc6fb15ed9472e9c3881c0491d15"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_linux_amd64.tar.gz"
-      sha256 "a48bb0cf7c6962991671183f9b1aec4219cc97504ee7cd62da2251436975041a"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/b4nst/turbogit/releases/download/v1.1.1/turbogit_1.1.1_linux_arm64.tar.gz"
-        sha256 "a9d8a01fa31b0fc1c383233b88dfc6ddd6ce6080a1041b2b041656863f133b08"
-      else
-      end
-    end
+    url "https://github.com/b4nst/turbogit/releases/download/v1.2.0/turbogit_1.2.0_macOS_amd64.tar.gz"
+    sha256 "1fb0b27ce419d1bcdd16f3cf314263bd593cc1312478f29092e45efe8b39bde4"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/b4nst/turbogit/releases/download/v1.2.0/turbogit_1.2.0_linux_amd64.tar.gz"
+    sha256 "9e8af2abcbaf00f37d7556e0cb40f005311d49ee7bdd98bbf6aa95eebc2bd970"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/b4nst/turbogit/releases/download/v1.2.0/turbogit_1.2.0_linux_arm64.tar.gz"
+    sha256 "b557b81e29cbd1b5c90c0e54c0a870c8ec9907c5f4c0e091a06b3aee8a9e7a3b"
   end
   
   head do
@@ -29,6 +25,7 @@ class Turbogit < Formula
 
   def install
     bin.install "bin/tug"
+    etc.install "config/tug.toml"
     (bash_completion/"tug.sh").write `#{bin}/tug completion bash`
     (zsh_completion/"_tug").write `#{bin}/tug completion zsh`
     (fish_completion/"tug.fish").write `#{bin}/tug completion fish`
