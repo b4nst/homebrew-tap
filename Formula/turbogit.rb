@@ -7,6 +7,12 @@ class Turbogit < Formula
   license "MIT"
   head "https://github.com/b4nst/turbogit.git"
 
+  bottle do
+    root_url "https://github.com/b4nst/homebrew-tap/releases/download/turbogit-3.0.0"
+    sha256 cellar: :any,                 catalina:     "5c90ee0d3247d3ea5a3901bc1714c96893c456beedc43752240922612c79c8db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6779a95ac1d9a561fc3db74deffad24154cbe8d6100efb0080ca10b7079c09ce"
+  end
+
   depends_on "go" => :build
   depends_on "pkg-config" => :build
   depends_on "libgit2"
