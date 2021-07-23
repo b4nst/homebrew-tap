@@ -2,8 +2,8 @@ class Turbogit < Formula
   desc "Opinionated cli enforcing clean git workflow without comprising UX"
   homepage "https://b4nst.github.io/turbogit"
   url "https://github.com/b4nst/turbogit.git",
-      tag:      "v3.0.0",
-      revision: "ab354e46723d82f5d9d656b3e90574276cd369ca"
+      tag:      "v3.0.1",
+      revision: "1601bcacd54e41fa62adabf7d073d438c252f86f"
   license "MIT"
   head "https://github.com/b4nst/turbogit.git"
 
