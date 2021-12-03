@@ -8,9 +8,9 @@ class Turbogit < Formula
   head "https://github.com/b4nst/turbogit.git"
 
   bottle do
-    root_url "https://github.com/b4nst/homebrew-tap/releases/download/turbogit-3.0.1"
-    sha256 cellar: :any,                 catalina:     "b46c89d8277cfbd80fd62ce9eb7b1b21f506c2eb02d9fcc42965bdaa22a42f9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f24471db0df452f07df35c40e94996f5e929255fcbaf968a1edc7e4b91cd4fa9"
+    root_url "https://github.com/b4nst/homebrew-tap/releases/download/turbogit-3.1.1"
+    sha256 cellar: :any,                 catalina:     "793d736fddd95708f243c882269b0925a3eec7e417093e7d8e63fe47bfb5ab67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f9ccda6fb98920b203bfeec3619b75592dee46e13283f7daa3c55abed9bbc37c"
   end
 
   depends_on "go" => :build
