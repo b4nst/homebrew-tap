@@ -2,8 +2,8 @@ class Turbogit < Formula
   desc "Opinionated cli enforcing clean git workflow without comprising UX"
   homepage "https://b4nst.github.io/turbogit"
   url "https://github.com/b4nst/turbogit.git",
-      tag:      "v3.1.1",
-      revision: "bf778142900c0109816721bb44791a97816189bc"
+      tag:      "v4.0.0",
+      revision: "6991087eb96556723054ab2ca25f1f029f243ef0"
   license "MIT"
   head "https://github.com/b4nst/turbogit.git"
 
@@ -13,14 +13,15 @@ class Turbogit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f9ccda6fb98920b203bfeec3619b75592dee46e13283f7daa3c55abed9bbc37c"
   end
 
+  depends_on "cmake" => :build
   depends_on "go" => :build
   depends_on "pkg-config" => :build
-  depends_on "libgit2"
 
   def install
     ENV["TUG_VERSION"] = version
+    ENV.deparallelize
     system "make", "build"
-    bin.install "bin/tug"
+    bin.install "dist/bin/tug"
 
     bash_output = Utils.safe_popen_read(bin/"tug", "completion", "bash")
     (bash_completion/"tug").write bash_output
