@@ -13,11 +13,13 @@ class Turbogit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f9ccda6fb98920b203bfeec3619b75592dee46e13283f7daa3c55abed9bbc37c"
   end
 
+  depends_on "cmake" => :build
   depends_on "go" => :build
   depends_on "pkg-config" => :build
 
   def install
     ENV["TUG_VERSION"] = version
+    ENV.deparallelize
     system "make", "build"
     bin.install "dist/bin/tug"
 
