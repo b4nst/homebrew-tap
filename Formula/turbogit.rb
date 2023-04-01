@@ -2,8 +2,8 @@ class Turbogit < Formula
   desc "Opinionated cli enforcing clean git workflow without comprising UX"
   homepage "https://b4nst.github.io/turbogit"
   url "https://github.com/b4nst/turbogit.git",
-      tag:      "v4.0.0",
-      revision: "6991087eb96556723054ab2ca25f1f029f243ef0"
+      tag:      "v5.0.0",
+      revision: "ee4daff61e20c082587236666682db6a251e0618"
   license "MIT"
   head "https://github.com/b4nst/turbogit.git"
 
@@ -23,14 +23,7 @@ class Turbogit < Formula
     system "make", "build"
     bin.install "dist/bin/tug"
 
-    bash_output = Utils.safe_popen_read(bin/"tug", "completion", "bash")
-    (bash_completion/"tug").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"tug", "completion", "zsh")
-    (zsh_completion/"_tug").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"tug", "completion", "fish")
-    (fish_completion/"tug.fish").write fish_output
+    generate_completions_from_executable(bin/"tug", "completion")
   end
 
   test do
