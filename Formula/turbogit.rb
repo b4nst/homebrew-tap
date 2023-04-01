@@ -23,14 +23,7 @@ class Turbogit < Formula
     system "make", "build"
     bin.install "dist/bin/tug"
 
-    bash_output = Utils.safe_popen_read(bin/"tug", "completion", "bash")
-    (bash_completion/"tug").write bash_output
-
-    zsh_output = Utils.safe_popen_read(bin/"tug", "completion", "zsh")
-    (zsh_completion/"_tug").write zsh_output
-
-    fish_output = Utils.safe_popen_read(bin/"tug", "completion", "fish")
-    (fish_completion/"tug.fish").write fish_output
+    generate_completions_from_executable(bin/"tug", "completion")
   end
 
   test do
