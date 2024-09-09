@@ -5,20 +5,20 @@
 class Icmperf < Formula
   desc ""
   homepage ""
-  version "1.0.2"
+  version "2.0.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/b4nst/icmperf/releases/download/v1.0.2/icmperf_Darwin_x86_64.tar.gz"
-      sha256 "ed2add253698f6e74d65dbe33b26def563a14aba0b81da6645728edb563b108d"
+      url "https://github.com/b4nst/icmperf/releases/download/v2.0.0/icmperf_Darwin_x86_64.tar.gz"
+      sha256 "c784c3d70a6810b9df39f09a11d594f562405221aa2557b5c83713b312dc9e9c"
 
       def install
         bin.install "icmperf"
       end
     end
     on_arm do
-      url "https://github.com/b4nst/icmperf/releases/download/v1.0.2/icmperf_Darwin_arm64.tar.gz"
-      sha256 "caa0f2c736791c978f2026492224d8871ccdb8a937a689d3510ac6c8e49bdc3e"
+      url "https://github.com/b4nst/icmperf/releases/download/v2.0.0/icmperf_Darwin_arm64.tar.gz"
+      sha256 "e8d2504384d24bb9b86069f20d6a64442806e15dc3e99ec4efed56dc0511a473"
 
       def install
         bin.install "icmperf"
@@ -29,8 +29,8 @@ class Icmperf < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/b4nst/icmperf/releases/download/v1.0.2/icmperf_Linux_x86_64.tar.gz"
-        sha256 "33c0aa6c528349fe2a58d47aa7b7b4b98abe4ede3c983b57b1c1885a75b8338a"
+        url "https://github.com/b4nst/icmperf/releases/download/v2.0.0/icmperf_Linux_x86_64.tar.gz"
+        sha256 "60b49fdf47fb1b744784d828e9ecd0bd5eb33f35061e63dad74a74bd551a6c0a"
 
         def install
           bin.install "icmperf"
@@ -39,8 +39,8 @@ class Icmperf < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/b4nst/icmperf/releases/download/v1.0.2/icmperf_Linux_arm64.tar.gz"
-        sha256 "51c10f2e827d2169d39260d71ee8ad0c05d48514d602ebb11fb8732a8cd0ab07"
+        url "https://github.com/b4nst/icmperf/releases/download/v2.0.0/icmperf_Linux_arm64.tar.gz"
+        sha256 "8d3fab5c1ba3e4d3bc6b7ea66da77e97d87707b42987326dc829b69359723f27"
 
         def install
           bin.install "icmperf"
